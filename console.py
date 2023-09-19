@@ -127,12 +127,13 @@ class HBNBCommand(cmd.Cmd):
         if class_name not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
+        # create BaseModel name="My_little_house" age=14 height=1.57
         new_instance = HBNBCommand.classes[class_name]()
         kwargs = new_instance.to_dict()
         for item in args[1:]:
-            params = item.split('=')
+            params = item.split('=', 1)
             if not params or len(params) != 2:
-                return
+                continue
             try:
                 value = eval(params[1])
                 if isinstance(value, str):
