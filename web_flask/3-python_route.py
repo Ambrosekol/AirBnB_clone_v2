@@ -34,5 +34,6 @@ def python_txt_input(text='is cool'):
     text = text.replace('_', ' ')
     return "python {}".format(escape(text))
 
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
