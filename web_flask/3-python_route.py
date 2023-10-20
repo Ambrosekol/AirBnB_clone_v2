@@ -28,11 +28,11 @@ def c_txt_input(text):
     return "C {}".format(escape(newval))
 
 
-@app.route("/python/", strict_slashes=False)
-@app.route("/python/<text>", strict_slashes=False)
-def python_txt_input(text='is cool'):
-    text = text.replace('_', ' ')
-    return "python {}".format(escape(text))
+@app.route('/python', strict_slashes=False)
+@app.route('/python/<text>', strict_slashes=False)
+def pythoniscool(text='is cool'):
+    """display “Python ”, followed by the value of the text variable"""
+    return 'Python ' + text.replace('_', ' ')
 
 
 if __name__ == "__main__":
