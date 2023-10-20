@@ -28,5 +28,10 @@ def c_txt_input(text):
     return "C {}".format(escape(newval))
 
 
+@app.route("/python/<text>", strict_slashes=False)
+def python_txt_input(text):
+    newchar = text.replace('_', ' ')
+    return "python {}".format(escape(newchar))
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
