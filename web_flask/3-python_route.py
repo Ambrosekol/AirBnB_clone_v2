@@ -28,8 +28,9 @@ def c_txt_input(text):
     return "C {}".format(escape(newval))
 
 
+@app.route("/python/", defaults={'text': "is_cool"}, strict_slashes=False, )
 @app.route("/python/<text>", strict_slashes=False)
-def python_txt_input(text="is cool"):
+def python_txt_input(text):
     newchar = text.replace('_', ' ')
     return "python {}".format(escape(newchar))
 
