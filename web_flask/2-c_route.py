@@ -24,7 +24,8 @@ def hbnb():
 
 @app.route("/c/<text>", strict_slashes=False)
 def txt_input(text):
-    return "C {}".format(escape(text))
+    newval = text.replace('_', ' ')
+    return "C {}".format(escape(newval))
 
 
 if __name__ == "__main__":
