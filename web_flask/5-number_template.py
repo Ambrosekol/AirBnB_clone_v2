@@ -6,7 +6,7 @@ This is a python a script that starts a Flask web application
 1. ALX task 0
 """
 
-from flask import Flask
+from flask import Flask, render_template
 from markupsafe import escape
 
 app = Flask(__name__)
@@ -42,7 +42,8 @@ def n_is_integer(n):
 
 @app.route("/number_template/<int:n>", strict_slashes=False)
 def n_template(n):
-    return "<h1>Number: {}</h1>".format(n)
+    """display a HTML page only if n is an integer"""
+    return render_template('5-number.html', val=n)
 
 
 if __name__ == "__main__":
